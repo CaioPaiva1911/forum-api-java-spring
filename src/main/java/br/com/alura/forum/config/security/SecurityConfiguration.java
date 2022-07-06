@@ -43,6 +43,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/h2-console/**").permitAll()
                 .antMatchers(HttpMethod.GET,"/topicos").permitAll()
                 .antMatchers(HttpMethod.GET, "/topicos/*").permitAll()
+                //FIXME É NECESSÁRIO DEIXAR COM AUTHENTICAÇÃO O ACTUATOR COMO FORMA DE SEGURANÇA
+                .antMatchers(HttpMethod.GET, "/actuator/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/auth").permitAll()
 
                 //Define que todas as outras URLS necessitam de autenticação
